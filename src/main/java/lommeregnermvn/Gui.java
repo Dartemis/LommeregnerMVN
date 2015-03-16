@@ -8,6 +8,7 @@ import javax.swing.*;
 public class Gui extends JFrame {
 	JTextField showResult;
 	JButton[] button;
+	JButton regneregler;
 	
 	public Gui( String title ){
 		super( title );
@@ -36,8 +37,17 @@ public class Gui extends JFrame {
 		setButtons();
 		
 		// knapper til + - * / =
-		setRegneregler();
+		regneregler = new JButton("+");
+		getContentPane().add(regneregler);
 		
+		regneregler = new JButton("-");
+		getContentPane().add(regneregler);
+		
+		regneregler = new JButton("x");
+		getContentPane().add(regneregler);
+		
+		regneregler = new JButton("/");
+		getContentPane().add(regneregler);
 	}
 	
 	public void setButtons(){
@@ -51,9 +61,5 @@ public class Gui extends JFrame {
 		}
 	}
 	
-	public void setRegneregler(){
-		
-		
-	}
 
 }
