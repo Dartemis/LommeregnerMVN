@@ -1,33 +1,59 @@
 package lommeregnermvn;
 
 import java.awt.FlowLayout;
+
+import javax.security.auth.Subject;
 import javax.swing.*;
 
 public class Gui extends JFrame {
+	JTextField showResult;
+	JButton[] button;
 	
 	public Gui( String title ){
 		super( title );
 		
-		setVisible(true);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(500, 500);
-		
-		//SETUP INTERFACE
-		setGuiSize();
 		
 		//SETUP CONTAINER
 		getContentPane().setLayout(new FlowLayout());
 		
+		//SETUP INTERFACE
+		setGuiSize();
 		
 		
+		
+		
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
 	public void setGuiSize(){		
 		//textfeldt til resultat
+		showResult = new JTextField(40);
+		getContentPane().add(showResult);
 		
 		// Knapper fra 0-9
+		setButtons();
 		
 		// knapper til + - * / =
+		setRegneregler();
+		
+	}
+	
+	public void setButtons(){
+		
+		button = new JButton[10];
+		
+		for(int i=0; i < 10; i++){
+			button[i] = new JButton();
+			button[i].setText(Integer.toString(i));
+			getContentPane().add(button[i]);
+		}
+	}
+	
+	public void setRegneregler(){
+		
+		
 	}
 
 }
